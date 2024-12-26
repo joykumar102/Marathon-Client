@@ -8,16 +8,7 @@ const RegisterFrom = () => {
 
    const update = useLoaderData();
    const {   firstName, lastName, contactNumber, additionalInfo } = update;
-//    console.log('marathon update', update);
-
-
     const  navigate = useNavigate();
-
-
-
-   
-
-
 
    const handleUpdate = (e) =>{
     const updatedData = {

@@ -21,7 +21,7 @@ const AddMarathons = () => {
         const description = e.target.description.value;
         const photo = e.target.photo.value;
         const newDate = startDate;
-        // console.log(title, startRegistrationDate, endRegistrationDate, marathonStartDate, location, runningDistance, description, photo, newDate);
+       
 
         const formData = {title, startRegistrationDate, endRegistrationDate, marathonStartDate, location, runningDistance, description, photo, newDate}
     console.log(endRegistrationDate);
@@ -89,11 +89,7 @@ const AddMarathons = () => {
                                 defaultValue={"20-10-2024"}
                                 
                                 className="input input-bordered input-info w-full font-extrabold text-green-800" />
-                            {/* <DatePicker
-                                className='border p-2 rounder-xl w-full '
-                                selected={startDate}
-                                onChange={date => setStartDate(date)}
-                            ></DatePicker> */}
+                            
                         </div>
                         <div  className='grid grid-cols-1'>
                             <span className="label-text text-lg">End Registration Date
@@ -105,11 +101,7 @@ const AddMarathons = () => {
                                 disabled={true}
                                 defaultValue={'20-05-2025'}
                                 className="input input-bordered input-info w-full font-extrabold text-green-800" />
-                            {/* <DatePicker
-                                className='border p-2 rounder-xl w-full '
-                                selected={startDate}
-                                onChange={date => setStartDate(date)}
-                            ></DatePicker> */}
+                            
                         </div>
                         <div  className='grid grid-cols-1'>
                             <span className="label-text text-lg">Marathon Start Date
@@ -121,11 +113,7 @@ const AddMarathons = () => {
                                 defaultValue={'20-08-2025'}
                                 disabled={true}
                                 className="input input-bordered input-info w-full font-extrabold text-green-800" />
-                            {/* <DatePicker
-                                className='border p-2 rounder-xl w-full '
-                                selected={startDate}
-                                onChange={date => setStartDate(date)}
-                            ></DatePicker> */}
+                            
                         </div>
                         <div>
                             <span className="label-text text-lg">Location </span>
@@ -166,11 +154,7 @@ const AddMarathons = () => {
                         </div>
                         <div  className='grid grid-cols-1'>
                             <span className="label-text text-lg">New Date</span>
-                            {/* <input
-                                type="text"
-                                name='newDate'
-                                placeholder="New Date"
-                                className="input input-bordered input-info w-full " /> */}
+                           
 
                             <DatePicker
                                 className='border p-2 rounder-xl w-full '

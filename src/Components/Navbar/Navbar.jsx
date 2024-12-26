@@ -44,11 +44,11 @@ const Navbar = () => {
                         <Link to='/'>Home</Link>
                         <Link to='/Marathons'>Marathons</Link>
                         {
-                        user && < >
-                        <Link to='/AddMarathons'>Add Marathon</Link>
-                    <Link to='/MarathonsList'>My Marathons List </Link>
-                    <Link to='/ApplyList'> My Apply List</Link></>
-                    }
+                            user && < >
+                                <Link to='/AddMarathons'>Add Marathon</Link>
+                                <Link to='/MarathonsList'>My Marathons List </Link>
+                                <Link to='/ApplyList'> My Apply List</Link></>
+                        }
                     </ul>
                 </div>
                 <div className="pt-2 flex gap-2">
@@ -64,42 +64,36 @@ const Navbar = () => {
                     <Link to='/Marathons'>Marathons</Link>
                     {
                         user && < >
-                        <Link to='/AddMarathons'>Add Marathon</Link>
-                    <Link to='/MarathonsList'>My Marathons List </Link>
-                    <Link to='/ApplyList'> My Apply List</Link></>
+                            <Link to='/AddMarathons'>Add Marathon</Link>
+                            <Link to='/MarathonsList'>My Marathons List </Link>
+                            <Link to='/ApplyList'> My Apply List</Link></>
                     }
                 </ul>
             </div>
-           
+
 
             <div className="navbar-end gap-3">
 
                 {
-                    user ? 
-                    <div className='flex items-center gap-4'>
-                                <Tooltip className='z-10' anchorSelect="#showTooltip" content={user.displayName}>
-                                </Tooltip>
-                                <div className="avatar online">
-                                    <div className="w-16 rounded-full">
-                                        <Link ><img id="showTooltip" src={user.photoURL} /></Link>
-                                    </div>
+                    user ?
+                        <div className='flex items-center gap-4'>
+                            <Tooltip className='z-10' anchorSelect="#showTooltip" content={user.displayName}>
+                            </Tooltip>
+                            <div className="avatar online">
+                                <div className="w-16 rounded-full">
+                                    <Link ><img id="showTooltip" src={user.photoURL} /></Link>
                                 </div>
-                                <div><button onClick={handleLogOut} className="btn btn-accent">Log Out</button></div>
                             </div>
+                            <div><button onClick={handleLogOut} className="btn btn-accent">Log Out</button></div>
+                        </div>
 
-                    
+
                         :
                         <div>
                             <Link to='/Login'><button className="btn btn-accent">LogIn</button></Link>
                             <Link to='/Register'> <button className="btn btn-accent">Register</button></Link>
                         </div>
-
-
-
-
                 }
-
-                {/* <Tooltip></Tooltip> */}
 
             </div>
         </div>

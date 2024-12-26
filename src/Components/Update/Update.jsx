@@ -21,7 +21,7 @@ const Update = () => {
         const description = e.target.description.value;
         const photo = e.target.photo.value;
         const newDate = startDate;
-        // console.log(title, startRegistrationDate, endRegistrationDate, marathonStartDate, location, runningDistance, description, photo, newDate);
+     
 
         const updatedData = {_id, title, startRegistrationDate, endRegistrationDate, marathonStartDate, location, runningDistance, description, photo, newDate }
         console.log(updatedData);

@@ -16,9 +16,6 @@ const DetailsCard = ({details}) => {
             <p className='text-lg'>Registration Start Dates: {startRegistrationDate}</p>
 
             <p className='text-lg'>Registration Ends Dates: {endRegistrationDate}</p>
-            
-                {/* <Link to='/MarathonsDetails'><button className="btn w-full btn-primary">See Details</button></Link> */}
-
         </div>
     </div>
     );

@@ -38,7 +38,7 @@ const MarathonsDetails = () => {
           <div className="card card-compact bg-base-100 shadow-xl max-w-3xl mx-auto my-10">
           <div className="my-5 text-center space-y-4 text-green-600">
                     <h3 className="text-lg font-semibold">Countdown to Marathon Start:</h3>
-                    {/* <p>Start Date: {new Date(marathonStartDate).toDateString()}</p> */}
+                    
                    <div className='lg:ml-[300px] sm:ml-[280px]'>
                    <CountdownCircleTimer
                    
@@ -62,9 +62,6 @@ const MarathonsDetails = () => {
                     <p className="text-lg">Registration Start Date: {startRegistrationDate}</p>
                     <p className="text-lg">Registration End Date: {endRegistrationDate}</p>
                 </div>
-
-                
-
                 <Link to={`/RegisterFrom/${_id}`}>
                     <button className="btn w-full bg-sky-400 text-white">Register</button>
                 </Link>
