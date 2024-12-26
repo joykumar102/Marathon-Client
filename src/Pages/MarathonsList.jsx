@@ -19,6 +19,7 @@ const MarathonsList = () => {
                 list={list}
                 marathonList={marathonList}
                 setMarathonList={setMarathonList}
+                loadedMarathonList={loadedMarathonList}
                 ></MarathonListCard>)
             }
 

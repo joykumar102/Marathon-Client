@@ -21,7 +21,7 @@ const Navbar = () => {
     return (
 
 
-        <div className="navbar bg-base-100 bg-opacity-50 sticky top-0 z-50 backdrop-blur-lg">
+        <div className="navbar bg-sky-200 bg-opacity-50 sticky top-0 z-50 backdrop-blur-lg">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -43,9 +43,12 @@ const Navbar = () => {
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-lg font-semibold gap-2">
                         <Link to='/'>Home</Link>
                         <Link to='/Marathons'>Marathons</Link>
+                        {
+                        user && < >
                         <Link to='/AddMarathons'>Add Marathon</Link>
-                        <Link to='/MarathonsList'>My Marathons List</Link>
-                        <Link to='/ApplyList'> My Apply List</Link>
+                    <Link to='/MarathonsList'>My Marathons List </Link>
+                    <Link to='/ApplyList'> My Apply List</Link></>
+                    }
                     </ul>
                 </div>
                 <div className="pt-2 flex gap-2">
@@ -59,9 +62,12 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1 gap-4 text-lg font-semibold">
                     <Link to='/'>Home</Link>
                     <Link to='/Marathons'>Marathons</Link>
-                    <Link to='/AddMarathons'>Add Marathon</Link>
+                    {
+                        user && < >
+                        <Link to='/AddMarathons'>Add Marathon</Link>
                     <Link to='/MarathonsList'>My Marathons List </Link>
-                    <Link to='/ApplyList'> My Apply List</Link>
+                    <Link to='/ApplyList'> My Apply List</Link></>
+                    }
                 </ul>
             </div>
            

@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import Swal from 'sweetalert2'
-
-// import DatePicker from "react-datepicker";
-// import { newDate } from 'react-datepicker/dist/date_utils';
-
 import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate, useNavigation } from 'react-router-dom';
 
 const AddMarathons = () => {
 
     const [startDate, setStartDate] = useState(new Date());
+
+    const navigate = useNavigation();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -45,6 +44,7 @@ const AddMarathons = () => {
                 icon: 'success',
                 confirmButtonText: 'Cool'
               })
+              navigate('/Marathons');
         }
     })
 

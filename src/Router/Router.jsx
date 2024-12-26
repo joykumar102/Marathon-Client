@@ -13,17 +13,18 @@ import Update from "../Components/Update/Update";
 import RegistrationForm from "../Components/MarathonsDetails/RegistrationForm";
 import Error from "../Pages/Error";
 import PrivateRoute from "../Components/Provider/PrivateRoute";
+import RegisterFrom from "../Components/Update/RegisterFrom";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
-        // errorElement: <Error></Error>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path:'/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/addMarathon'),
+                loader: () => fetch('http://localhost:5000/addMarathonLimit'),
             },
             
             {
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
             {
                 path:'/ApplyList',
                 element: <PrivateRoute><ApplyList></ApplyList></PrivateRoute>,
-                // loader: () => fetch(`http://localhost:5000/register-apply?email=${user.email}`)
+               
             },
             {
                 path:'/AboutUs',
@@ -71,6 +72,12 @@ const router = createBrowserRouter([
                 path:'/Update/:id',
                 element: <Update></Update>,
                 loader: ({params}) => fetch(`http://localhost:5000/addMarathon/${params.id}`),
+            },
+           
+            {
+                path:'/UpdateRegister/:id',
+                element: <RegisterFrom></RegisterFrom>,
+                loader: ({params}) => fetch(`http://localhost:5000/application/${params.id}`),
             },
         ]
     },

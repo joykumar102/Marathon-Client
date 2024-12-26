@@ -7,7 +7,7 @@ import LimitCard from '../Components/LimitCard/LimitCard';
 
 const Home = () => {
     const limit = useLoaderData();
-    
+  
     return (
         <div  className='px-20'>
             <Banner></Banner>
