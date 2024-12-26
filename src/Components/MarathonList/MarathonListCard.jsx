@@ -21,7 +21,7 @@ const MarathonListCard = ({list, setMarathonList, marathonList}) => {
           
 
             
-            fetch(`http://localhost:5000/addMarathon/${_id}`, {
+            fetch(`https://assignment-11-server-zeta-seven.vercel.app/addMarathon/${_id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())

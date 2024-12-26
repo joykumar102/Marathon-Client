@@ -27,7 +27,7 @@ const AddMarathons = () => {
     console.log(endRegistrationDate);
 
     // send data to the server 
-    fetch('http://localhost:5000/addMarathon', {
+    fetch('https://assignment-11-server-zeta-seven.vercel.app/addMarathon', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

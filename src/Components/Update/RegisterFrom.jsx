@@ -19,7 +19,7 @@ const RegisterFrom = () => {
     };
 
     // Ensure you have the unique ID of the application to update
-    fetch(`http://localhost:5000/application/${update._id}`, {
+    fetch(`https://assignment-11-server-zeta-seven.vercel.app/application/${update._id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
