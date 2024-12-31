@@ -7,6 +7,7 @@ const MarathonsDetails = () => {
     const {
         _id,
         title,
+        marathonStartDate,
         startRegistrationDate,
         endRegistrationDate,
         location,
@@ -16,7 +17,7 @@ const MarathonsDetails = () => {
     } = marathonDetails;
 
     // Correctly parse and convert the marathonStartDate
-    const marathonStartDate = '2025-08-20'; // Example date in YYYY-MM-DD format
+    // const marathonStartDate = '2025-08-20'; // Example date in YYYY-MM-DD format
     const marathonStartTime = new Date(marathonStartDate).getTime();
 
     // Calculate current time and remaining time

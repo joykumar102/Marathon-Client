@@ -42,7 +42,7 @@ const Navbar = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-lg font-semibold gap-2">
                         <Link to='/'>Home</Link>
-                        <Link to='/Marathons'>Marathons</Link>
+                        <Link to='/Marathons'> Marathons</Link>
                         {
                             user && < >
                                 <Link to='/AddMarathons'>Add Marathon</Link>
@@ -61,7 +61,7 @@ const Navbar = () => {
             <div className="navbar-center  hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-4 text-lg font-semibold">
                     <Link to='/'>Home</Link>
-                    <Link to='/Marathons'>Marathons</Link>
+                    <Link to='/Marathons'> Marathons</Link>
                     {
                         user && < >
                             <Link to='/AddMarathons'>Add Marathon</Link>

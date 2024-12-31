@@ -1,25 +1,39 @@
-import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+
 import MarathonListCard from '../Components/MarathonList/MarathonListCard';
+
+import AuthContext from '../Context/AuthContext';
 
 const MarathonsList = () => {
 
-    const loadedMarathonList = useLoaderData();
-    const [marathonList, setMarathonList] = useState(loadedMarathonList);
+   
+    const [marathonList, setMarathonList] = useState([]);
+    const {user} = useContext(AuthContext);
+ 
+    
 
+useEffect(() => {
+    fetch(`http://localhost:5000/myMarathon/?email=${user?.email}`)
+    .then(res => res.json())
+    .then(data => {
+        setMarathonList(data);
+    })
+    .catch(error => {
+        console.log(error);
+    })
+}, [user]);
 
 
     return (
-        
-
         <div className='px-10'>
             {
                 marathonList.map(list => <MarathonListCard 
                 key={list._id}
                 list={list}
                 marathonList={marathonList}
+                
                 setMarathonList={setMarathonList}
-                loadedMarathonList={loadedMarathonList}
+               
                 ></MarathonListCard>)
             }
 

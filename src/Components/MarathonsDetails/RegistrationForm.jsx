@@ -39,7 +39,7 @@ const RegistrationForm = () => {
             additionalInfo,
         }
 
-        fetch('https://assignment-11-server-zeta-seven.vercel.app/register-apply/', {
+        fetch('http://localhost:5000/register-apply/', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -120,9 +120,9 @@ const RegistrationForm = () => {
                                 className="input input-bordered input-info w-full " />
                         </div>
                         <div>
-                            <span className="label-text text-lg">Contact Number</span>
+                            <span className="label-text text-lg">Contact </span>
                             <input
-                                type="number"
+                                
                                 name='contactNumber'
                                 placeholder="Contact Number"
                                 required
@@ -131,7 +131,7 @@ const RegistrationForm = () => {
                         <div>
                             <span className="label-text text-lg">Additional Info</span>
                             <input
-                                type="text"
+                                
                                 name='additionalInfo'
                                 placeholder="Additional Info"
                                 required

@@ -3,17 +3,17 @@ import useAuth from '../Hooks/useAuth';
 import { MdDeleteForever } from 'react-icons/md';
 import { RxUpdate } from 'react-icons/rx';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
 
 const ApplyList = () => {
     const { user } = useAuth();
     const [apply, setApply] = useState([]);
     const [searchText, setSearchText] = useState(""); // State for search input
     const [filteredApply, setFilteredApply] = useState([]); // State for filtered results
+    const [selectedApplication, setSelectedApplication] = useState(null); // State for selected application
 
     useEffect(() => {
         // Fetch the user's applied marathons
-        fetch(`https://assignment-11-server-zeta-seven.vercel.app/register-apply?email=${user?.email}`)
+        fetch(`http://localhost:5000/register-apply?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setApply(data);
@@ -41,25 +41,58 @@ const ApplyList = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://assignment-11-server-zeta-seven.vercel.app/register-apply/${register_id}`, {
+                fetch(`http://localhost:5000/register-apply/${register_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
                         if (data.deletedCount > 0) {
-                            Swal.fire({
-                                title: "Deleted!",
-                                text: "Your registration has been deleted.",
-                                icon: "success"
-                            });
-
-                            // Remove the deleted item from the local state
+                            Swal.fire("Deleted!", "Your registration has been deleted.", "success");
                             setFilteredApply(filteredApply.filter(app => app._id !== register_id));
                             setApply(apply.filter(app => app._id !== register_id));
                         }
                     });
             }
         });
+    };
+
+    const openUpdateModal = (application) => {
+        setSelectedApplication(application);
+        document.getElementById("update-modal").showModal();
+    };
+
+    const closeUpdateModal = () => {
+        setSelectedApplication(null);
+        document.getElementById("update-modal").close();
+    };
+
+    const handleUpdate = (event) => {
+        event.preventDefault();
+
+        const updatedDetails = {
+            firstName: event.target.firstName.value,
+            lastName: event.target.lastName.value,
+            contactNumber: event.target.contactNumber.value,
+        };
+
+        fetch(`http://localhost:5000/application/${selectedApplication._id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedDetails),
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    Swal.fire("Updated!", "Your registration has been updated.", "success");
+                    setApply(apply.map(app =>
+                        app._id === selectedApplication._id ? { ...app, ...updatedDetails } : app
+                    ));
+                    setFilteredApply(filteredApply.map(app =>
+                        app._id === selectedApplication._id ? { ...app, ...updatedDetails } : app
+                    ));
+                    closeUpdateModal();
+                }
+            });
     };
 
     return (
@@ -102,30 +135,81 @@ const ApplyList = () => {
                                         </div>
                                     </div>
                                 </td>
-                                <td className='text-xl font-semibold'>{app.title}</td>
+                                <td className="text-xl font-semibold">{app.title}</td>
                                 <td>{app.marathonStartDate}</td>
                                 <th className="space-x-5">
                                     <button onClick={() => handleDelete(app._id)} className="btn bg-white hover:bg-sky-300">
                                         <MdDeleteForever />
                                     </button>
-                                    <Link to={`/UpdateRegister/${app._id}`}>
-                                        <button className="btn bg-white hover:bg-sky-300">
-                                            <RxUpdate />
-                                        </button>
-                                    </Link>
+                                    <button onClick={() => openUpdateModal(app)} className="btn bg-white hover:bg-sky-300">
+                                        <RxUpdate />
+                                    </button>
                                 </th>
                             </tr>
                         ))}
                     </tbody>
                 </table>
 
-                {/* Show a message if no results are found */}
                 {filteredApply.length === 0 && (
                     <div className="text-center text-lg text-gray-600 mt-4">
                         No results found for "{searchText}".
                     </div>
                 )}
             </div>
+
+            {/* Update Modal */}
+            <dialog id="update-modal" className="modal">
+                <form onSubmit={handleUpdate} className="modal-box">
+                    <h3 className="font-bold text-lg">Update Registration</h3>
+                    <div>
+                        <label>Marathon Title:</label>
+                        <input
+                            type="text"
+                            value={selectedApplication?.title || ''}
+                            readOnly
+                            className="input input-bordered w-full"
+                        />
+                    </div>
+                    <div>
+                        <label>Marathon Start Date:</label>
+                        <input
+                            type="text"
+                            value={selectedApplication?.marathonStartDate || ''}
+                            readOnly
+                            className="input input-bordered w-full"
+                        />
+                    </div>
+                    <div>
+                        <label>First Name:</label>
+                        <input
+                            name="firstName"
+                            defaultValue={selectedApplication?.firstName || ''}
+                            className="input input-bordered w-full"
+                        />
+                    </div>
+                    <div>
+                        <label>Last Name:</label>
+                        <input
+                            name="lastName"
+                            defaultValue={selectedApplication?.lastName || ''}
+                            className="input input-bordered w-full"
+                        />
+                    </div>
+                    <div>
+                        <label>Contact:</label>
+                        <input
+                        
+                            name="contactNumber"
+                            defaultValue={selectedApplication?.contactNumber || ''}
+                            className="input input-bordered w-full"
+                        />
+                    </div>
+                    <div className="modal-action">
+                        <button type="submit" className="btn">Save</button>
+                        <button type="button" onClick={closeUpdateModal} className="btn">Close</button>
+                    </div>
+                </form>
+            </dialog>
         </div>
     );
 };

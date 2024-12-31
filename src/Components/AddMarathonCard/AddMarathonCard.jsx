@@ -17,6 +17,7 @@ const AddMarathonCard = ({addMarathon}) => {
                 <p className='text-lg'>Registration Start Dates: {startRegistrationDate}</p>
 
                 <p className='text-lg'>Registration Ends Dates: {endRegistrationDate}</p>
+                <p className='text-lg'>New Date: {newDate}</p>
                 
                     <Link to={`/MarathonsDetails/${_id}`}><button className="btn w-full btn-primary">See Details</button></Link>
                     
