@@ -39,7 +39,7 @@ const RegistrationForm = () => {
             additionalInfo,
         }
 
-        fetch('http://localhost:5000/register-apply/', {
+        fetch('http://assignment-11-server-zeta-seven.vercel.app/register-apply/', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

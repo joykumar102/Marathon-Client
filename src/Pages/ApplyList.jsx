@@ -13,7 +13,7 @@ const ApplyList = () => {
 
     useEffect(() => {
         // Fetch the user's applied marathons
-        fetch(`http://localhost:5000/register-apply?email=${user?.email}`)
+        fetch(`http://assignment-11-server-zeta-seven.vercel.app/register-apply?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setApply(data);
@@ -41,7 +41,7 @@ const ApplyList = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/register-apply/${register_id}`, {
+                fetch(`http://assignment-11-server-zeta-seven.vercel.app/register-apply/${register_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -75,7 +75,7 @@ const ApplyList = () => {
             contactNumber: event.target.contactNumber.value,
         };
 
-        fetch(`http://localhost:5000/application/${selectedApplication._id}`, {
+        fetch(`http://assignment-11-server-zeta-seven.vercel.app/application/${selectedApplication._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updatedDetails),
