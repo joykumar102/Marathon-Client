@@ -19,7 +19,7 @@ const RegisterFrom = () => {
     };
 
     // Ensure you have the unique ID of the application to update
-    fetch(`http://assignment-11-server-zeta-seven.vercel.app/application/${update._id}`, {
+    fetch(`https://assignment-11-server-zeta-seven.vercel.app/application/${update._id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const RegisterFrom = () => {
                     </div>
 
                     <form onSubmit={handleUpdate}>
-                        <div className='grid grid-cols-2 w-10/12 mx-auto gap-5 py-10'>
+                        <div className='lg:grid lg:grid-cols-2  w-10/12 mx-auto gap-5 py-10'>
                             <div>
                                 <span className="label-text text-lg">First Name</span>
                                 <input

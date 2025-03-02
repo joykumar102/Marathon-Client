@@ -20,8 +20,9 @@ const Navbar = () => {
 
     return (
 
+        <div className='bg-sky-200 bg-opacity-50 sticky top-0 z-50 backdrop-blur-lg'>
 
-        <div className="navbar bg-sky-200 bg-opacity-50 sticky top-0 z-50 backdrop-blur-lg">
+        <div className="navbar">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -96,6 +97,7 @@ const Navbar = () => {
                 }
 
             </div>
+        </div>
         </div>
     );
 };

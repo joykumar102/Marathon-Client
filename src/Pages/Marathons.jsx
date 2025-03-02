@@ -6,7 +6,7 @@ const Marathons = () => {
     const addMarathonData = useLoaderData();
     
     return (
-        <div className='grid lg:grid-cols-3 gap-10 px-10 mx-auto max-w-6xl py-10'>
+        <div className='grid lg:grid-cols-3 gap-10 px-5 mx-auto max-w-6xl py-10'>
            
             {
                 addMarathonData.map(addMarathon => <AddMarathonCard 

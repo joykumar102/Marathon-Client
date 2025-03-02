@@ -2,15 +2,15 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className='mx-auto py-5  '>
+        <div className='mx-auto py-5  px-5'>
 
-            <div className='text-center px-20 py-10 space-y-5 pb-20'>
-                <h2 className='lg:text-5xl text-3xl font-bold'>Marathon Management</h2>
+            <div className='text-center px-5 py-10 space-y-5 pb-20'>
+                <h2 className='lg:text-5xl text-2xl font-bold'>Marathon Management</h2>
                 <p className='lg:text-xl font-semibold'>
                 A Marathon Management System streamlines event organization, including participant registration, race tracking, timing, route planning, result management, and communication, ensuring efficient coordination and an enhanced experience for runners and organizers.</p>
             </div>
 
-            <div className=' mx-auto border-2 p-5 rounded-xl'>
+            <div className=' mx-auto border-2 p-3 rounded-xl'>
 
 
                 <div className="carousel rounded-xl">

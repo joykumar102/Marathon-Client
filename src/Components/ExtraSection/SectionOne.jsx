@@ -2,12 +2,12 @@ import React from 'react';
 
 const SectionOne = () => {
     return (
-        <div className='mx-auto mt-10 py-10   space-y-8 '>
-        <h2 className='text-4xl text-center text-gray-600 font-bold'>Marathon Management system</h2>
-        <p className='text-xl text-center px-10'>Crowdfunding is a way to raise money for a specific cause or project by gathering small contributions from a large number of people, usually through an online platform.</p>
-        <div className='space-y-4 lg:flex lg:justify-between gap-5 p-10 border-2 rounded-xl '>
+        <div className='mx-auto mt-10 py-10 px-5  space-y-8 '>
+        <h2 className='lg:text-4xl text-2xl text-center text-gray-600 font-bold'>Marathon Management system</h2>
+        <p className='text-xl text-center px-3'>A Marathon Management System streamlines race organization, including participant registration, route planning, real-time tracking, results processing, and event logistics. It enhances efficiency, ensures security, and provides a seamless experience for runners, organizers, and spectators.</p>
+        <div className='space-y-4 lg:flex lg:justify-between gap-5 p-5 border-2 px-5 rounded-xl '>
           <div className='lg:w-[700px] mt-5'>
-          <h3 className='text-3xl'>Participant Registration and Management</h3>
+          <h3 className='lg:text-3xl text-2xl'>Participant Registration and Management</h3>
             <ol className='space-y-5 mt-5'>
                 <li>1. Online Registration: Allow participants to register through a user-friendly web or mobile interface.</li>
                 <li>2.Data Management: Store participant information such as names, contact details, emergency contacts, and medical history securely.</li>
@@ -22,14 +22,14 @@ const SectionOne = () => {
             </div>
         </div>
 
-        <div className='space-y-4 lg:flex lg:justify-between gap-8 p-10 border-2 rounded-xl'>
+        <div className='space-y-4 lg:flex lg:justify-between gap-8 p-5 border-2 px-5 rounded-xl'>
         <div>
                 <img 
                 className='rounded-xl w-full h-full'
                 src="https://i.ibb.co.com/Lz844hN/2023-Bank-of-America-Chicago-Marathon-live-streaming.webp" alt="" />
             </div>
           <div className='lg:w-[700px]'>
-          <h3 className='text-3xl'>Live Race Tracking & Timing</h3>
+          <h3 className='lg:text-3xl text-2xl'>Live Race Tracking & Timing</h3>
             <ol className='space-y-5 mt-5'>
                 <li>1. Real-Time GPS Tracking:
                 Track participants' locations in real-time using GPS devices or mobile apps, ensuring organizers and spectators can monitor race progress. </li>
@@ -42,9 +42,9 @@ const SectionOne = () => {
             
         </div>
 
-        <div className='space-y-4 lg:flex lg:justify-between border-2 rounded-xl gap-5 p-10 '>
+        <div className='space-y-4 lg:flex lg:justify-between border-2 rounded-xl gap-5 p-5 px-5 '>
           <div className='lg:w-[700px] mt-5'>
-          <h3 className='text-3xl'>Volunteer & Staff Coordination</h3>
+          <h3 className='lg:text-3xl text-2xl'>Volunteer & Staff Coordination</h3>
           
             <ol className='space-y-5 mt-5'>
                 <li>1.Volunteer Registration & Scheduling:

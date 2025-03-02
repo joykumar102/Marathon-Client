@@ -13,7 +13,7 @@ const MarathonsList = () => {
     
 
 useEffect(() => {
-    fetch(`http://assignment-11-server-zeta-seven.vercel.app/myMarathon/?email=${user?.email}`)
+    fetch(`https://assignment-11-server-zeta-seven.vercel.app/myMarathon/?email=${user?.email}`)
     .then(res => res.json())
     .then(data => {
         setMarathonList(data);

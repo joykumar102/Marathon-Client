@@ -25,7 +25,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element: <Home></Home>,
-                loader: () => fetch('http://assignment-11-server-zeta-seven.vercel.app/addMarathonLimit'),
+                loader: () => fetch('https://assignment-11-server-zeta-seven.vercel.app/addMarathonLimit'),
             },
             
             {
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
             {
                 path:'/Marathons',
                 element: <PrivateRoute><Marathons></Marathons></PrivateRoute>,
-                loader: () => fetch('http://assignment-11-server-zeta-seven.vercel.app/addMarathon'),
+                loader: () => fetch('https://assignment-11-server-zeta-seven.vercel.app/addMarathon'),
             },
             {
                 path:'/AddMarathons',
@@ -62,28 +62,28 @@ const router = createBrowserRouter([
             {
                 path:'/RegisterFrom/:id',
                 element: <RegistrationForm></RegistrationForm>,
-                loader: ({params}) => fetch(`http://assignment-11-server-zeta-seven.vercel.app/addMarathon/${params.id}`),
+                loader: ({params}) => fetch(`https://assignment-11-server-zeta-seven.vercel.app/addMarathon/${params.id}`),
             },
             {
                 path:'/MarathonsDetails/:id',
                 element: <PrivateRoute><MarathonsDetails></MarathonsDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://assignment-11-server-zeta-seven.vercel.app/addMarathon/${params.id}`),
+                loader: ({params}) => fetch(`https://assignment-11-server-zeta-seven.vercel.app/addMarathon/${params.id}`),
             },
             {
                 path:'/HomeMarathonDetails/:id',
                 element: <PrivateRoute><HomeMarathonDetails></HomeMarathonDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://assignment-11-server-zeta-seven.vercel.app/addMarathon/${params.id}`),
+                loader: ({params}) => fetch(`https://assignment-11-server-zeta-seven.vercel.app/addMarathon/${params.id}`),
             },
             {
                 path:'/Update/:id',
                 element: <Update></Update>,
-                loader: ({params}) => fetch(`http://assignment-11-server-zeta-seven.vercel.app/addMarathon/${params.id}`),
+                loader: ({params}) => fetch(`https://assignment-11-server-zeta-seven.vercel.app/addMarathon/${params.id}`),
             },
            
             {
                 path:'/UpdateRegister/:id',
                 element: <RegisterFrom></RegisterFrom>,
-                loader: ({params}) => fetch(`http://assignment-11-server-zeta-seven.vercel.app/application/${params.id}`),
+                loader: ({params}) => fetch(`https://assignment-11-server-zeta-seven.vercel.app/application/${params.id}`),
             },
         ]
     },

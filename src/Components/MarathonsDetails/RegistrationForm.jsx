@@ -39,7 +39,7 @@ const RegistrationForm = () => {
             additionalInfo,
         }
 
-        fetch('http://assignment-11-server-zeta-seven.vercel.app/register-apply/', {
+        fetch('https://assignment-11-server-zeta-seven.vercel.app/register-apply/', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -61,7 +61,7 @@ const RegistrationForm = () => {
 
     }
     return (
-        <div className='py-20'>
+        <div className=''>
             <div className='w-11/12 mx-auto border py-20  bg-blue-400 bg-gradient-to-r from-sky-300  to-pink-200'>
 
                 <div className='space-y-5 px-5 py-10 text-center border lg:w-[700px] mx-auto'>
@@ -72,7 +72,7 @@ const RegistrationForm = () => {
                 </div>
 
                 <form onSubmit={registerAplication}>
-                    <div className='grid grid-cols-2 w-10/12 mx-auto gap-5 py-10'>
+                    <div className='grid lg:grid-cols-2 w-10/12 mx-auto gap-5 py-10'>
 
                         <div>
                             <span className="label-text text-lg">Marathon Title</span>

@@ -27,7 +27,7 @@ const Update = () => {
         console.log(updatedData);
 
         // send data to the server 
-        fetch(`http://assignment-11-server-zeta-seven.vercel.app/addMarathon/${_id}`, {
+        fetch(`https://assignment-11-server-zeta-seven.vercel.app/addMarathon/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

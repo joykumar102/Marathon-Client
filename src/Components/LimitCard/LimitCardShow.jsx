@@ -6,7 +6,7 @@ const LimitCardShow = ({addCard}) => {
     const {_id, title, startRegistrationDate, endRegistrationDate, marathonStartDate, location, runningDistance, description, photo, newDate} = addCard;
     return (
        
-        <div className="card card-compact bg-base- shadow-xl">
+        <div className="card card-compact bg-base- shadow-xl ">
             
                     <figure>
                         <img

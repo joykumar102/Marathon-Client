@@ -29,7 +29,7 @@ const MarathonListCard = ({ list, marathonList, setMarathonList }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://assignment-11-server-zeta-seven.vercel.app/addMarathon/${id}`, {
+                fetch(`https://assignment-11-server-zeta-seven.vercel.app/addMarathon/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -49,7 +49,7 @@ const MarathonListCard = ({ list, marathonList, setMarathonList }) => {
 
     const handleUpdateSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://assignment-11-server-zeta-seven.vercel.app/addMarathon/${selectedMarathon._id}`, {
+        fetch(`https://assignment-11-server-zeta-seven.vercel.app/addMarathon/${selectedMarathon._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

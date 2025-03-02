@@ -9,7 +9,7 @@ const Home = () => {
     const limit = useLoaderData();
   
     return (
-        <div  className='px-20'>
+        <div  className=''>
             <Banner></Banner>
             <LimitCard limit={limit}></LimitCard>
             <div className='py-20'>

@@ -34,7 +34,7 @@ const AddMarathons = () => {
         
 
         // send data to the server 
-        fetch('http://assignment-11-server-zeta-seven.vercel.app/addMarathon', {
+        fetch('https://assignment-11-server-zeta-seven.vercel.app/addMarathon', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -64,7 +64,7 @@ const AddMarathons = () => {
 
 
     return (
-        <div className='py-20'>
+        <div className=''>
             <div className='w-11/12 mx-auto border py-20  bg-blue-400 bg-gradient-to-r from-sky-300  to-pink-200'>
 
                 <div className='space-y-5 px-5 py-10 text-center border lg:w-[700px] mx-auto'>
@@ -78,7 +78,7 @@ const AddMarathons = () => {
                 </div>
 
                 <form onSubmit={handleSubmit}>
-                    <div className='grid grid-cols-2 w-10/12 mx-auto gap-5 py-10'>
+                    <div className='lg:grid lg:grid-cols-2 w-10/12 mx-auto gap-5 py-10'>
 
                         <div>
                             <span className="label-text text-lg">Title</span>

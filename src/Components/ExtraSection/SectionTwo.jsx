@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const SectionTwo = () => {
     return (
-        <div className="container mx-auto text-center">
+        <div className="container mx-auto px-5 text-center">
         <h2 className="text-3xl font-bold text-gray-800 mb-6"> Marathons</h2>
-        <p className="text-lg text-gray-600 mb-12">TMarathons are long-distance running events, typically 42.195 kilometers (26.2 miles), challenging athletes to test endurance and speed. They promote health, community engagement, and often serve as charity fundraisers. </p>
+        <p className="text-lg text-gray-600 mb-12">The Marathons are long-distance running events, typically 42.195 kilometers (26.2 miles), challenging athletes to test endurance and speed. They promote health, community engagement, and often serve as charity fundraisers. </p>
 
         {/* Donation Impact */}
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
